@@ -1,0 +1,37 @@
+<launch>
+  
+  <!-- rosserial_python Node for ACM0 -->
+  <!-- <node name="serial_node_acm0" pkg="rosserial_python" type="serial_node.py" output="screen"> -->
+    <!-- <param name="port" value="/dev/ttyACM0" /> -->
+    <!-- <param name="baud" value="57600" /> -->
+  <!-- </node> -->
+
+  <!-- rosserial_python Node for ACM1 -->
+  <node name="serial_node_acm1" pkg="rosserial_python" type="serial_node.py" output="screen">
+    <param name="port" value="/dev/ttyACM0" />
+    <param name="baud" value="57600" />
+  </node>
+
+  <!-- rosserial_python Node for USB0 -->
+  <node name="serial_node_usb0" pkg="rosserial_python" type="serial_node.py" output="screen">
+    <param name="port" value="/dev/ttyUSB0" />
+    <param name="baud" value="57600" />
+  </node>
+
+  <!-- Launch RobotNavigationNode -->
+  <node name="robot_navigation_node" pkg="rotema" type="RobotNavigationNode" output="screen">
+    <!-- Tambahkan argumen atau parameter jika diperlukan -->
+  </node>
+
+  <!-- Launch RobotPositionNode -->
+  <node name="robot_position_node" pkg="rotema" type="RobotPositionNode" output="screen">
+    <!-- Tambahkan argumen atau parameter jika diperlukan -->
+  </node>
+
+  <!-- Launch RobotVelocityCommandNode -->
+  <node name="robot_velocity_command_node" pkg="rotema" type="RobotVelocityCommandNode" output="screen">
+    <!-- Tambahkan argumen atau parameter jika diperlukan -->
+  </node>
+
+
+</launch>
